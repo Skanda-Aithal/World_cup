@@ -17,7 +17,7 @@ def hm_main(home_team, away_team,event_type):
     
     #Create 4 pitches for heat and pass maps.
     pitch = Pitch_class()
-    pitch, fig, axs = pitch.create_pitch()
+    pitch, fig, axs = pitch.create_pitch(0,2)
     
     #'kdeplot' method shows heat map.
     pitch.kdeplot(home_passes['x'], home_passes['y'], ax=axs['pitch'][1][0],
