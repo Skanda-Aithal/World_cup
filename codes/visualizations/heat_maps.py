@@ -15,7 +15,7 @@ def hm_main(home_team, away_team,event_type):
     away_passes['pass_outcome'].fillna('Success', inplace=True)
     
     pitch = Pitch_class()
-    pitch, fig, axs = pitch.create_pitch(2,2)
+    pitch, fig, axs = pitch.create_pitch(1,2)
     
     pitch.kdeplot(home_passes['x'], home_passes['y'], ax=axs['pitch'][0][0],
                            shade=True, levels=100, shade_lowest=True,
