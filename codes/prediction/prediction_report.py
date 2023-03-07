@@ -33,11 +33,11 @@ def prediction_report():
             6500 tries the model is giving stable results. So, all matches simulated 6500 times.
             ''')
     
-    url = DATADIR + "/data/images/compare_models_viz.html"
+    url = DATADIR + "/codes/prediction/compare_models_viz.html"
     r = urllib.request.urlopen(url).read()
     components.html(r, height=height)
     
-    url = DATADIR + "/data/images/number_of_simulastions_viz.html"
+    url = DATADIR + "/codes/prediction/number_of_simulastions_viz.html"
     r = urllib.request.urlopen(url).read()
     components.html(r, height=height)
 
@@ -46,7 +46,7 @@ def prediction_report():
             The knockout stage was predicted by using Support Vector Machine as shown at below.
             ''')
    
-    st.image(DATADIR + '/data/images/Pred_brac.png')
+    st.image(DATADIR + '/codes/prediction/Pred_brac.png')
     
     st.text('''
             The model failed this try. Because there are some surprising results like Morocco vs Spain. If one match is
@@ -54,7 +54,7 @@ def prediction_report():
             When we do that, we get better results. The model correctly predicted 11 out of 15 matches. 
             ''')
     
-    st.image(DATADIR + '/data/images/image.png')
+    st.image(DATADIR + '/codes/prediction/match_by_match.png')
     
     st.subheader('Conclusion')
     st.text('''
