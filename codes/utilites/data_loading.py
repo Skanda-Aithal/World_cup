@@ -1,8 +1,8 @@
 import pandas as pd
 from statsbombpy import sb
 
-DATADIR = 'https://raw.githubusercontent.com/Skanda-Aithal/Wcup/main'
-groups = pd.read_csv('C:/Users/skand/Desktop/ll/FIFA-World-Cup-2018-Visualization-and-Prediction-main/data/csv/Groups.csv',parse_dates=[0])
+DATADIR = 'https://raw.githubusercontent.com/Skanda-Aithal/World_Cup/tree/main'
+groups = pd.read_csv(DATADIR + 'data/csv/Groups.csv',parse_dates=[0])
 img = DATADIR + '/data/images/TeamLogos/' #Team logos' directory
 
 competitions = sb.competitions() #Get competitions from Statsbomb 
