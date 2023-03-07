@@ -40,7 +40,7 @@ def show_header(home_team, away_team, choosed_match,event_type):     #Shows team
         col4.text(away_goals[['team','player','minute']].to_string(index = False, header=False))
        
 def show_viz_menu(home_team, away_team, event_type):
-    col1,col2,col3,col4,col5 = st.columns(5)
+    col1,col2,col3,col4,col5,col6 = st.columns(6)
 
     if(col1.button("Line Up")):
         st.title("Lineups")
@@ -59,11 +59,13 @@ def show_viz_menu(home_team, away_team, event_type):
         df, shots = all_shots(home_team,away_team,event_type)
         home_goals, away_goals, home_penalties, away_penalties = all_goals(home_team,away_team,df, shots)
         home_non_goals, away_non_goals = goals_and_non_goals(home_team,away_team,shots)
-        col1.pyplot(xg_shots(home_non_goals, home_goals)) #Calls xg_shots() from compare.py
-        col2.pyplot(xg_shots(away_non_goals, away_goals)) #Calls xg_shots() from compare.py
+        col1.pyplot(xg_shots(home_non_goals, home_goals)) 
+        col2.pyplot(xg_shots(away_non_goals, away_goals))
+    if(col6.button("Passing network")):
+        pn_main(home_team,away_team,event_type)    
 
 def show_match_viz(event_type, home_team, away_team, choosed_match):
-    #Show head and visualization menu
+
     show_header(home_team, away_team, choosed_match,event_type)
     show_viz_menu(home_team, away_team, event_type)
     
