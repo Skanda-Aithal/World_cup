@@ -15,14 +15,15 @@ def hm_main(home_team, away_team,event_type):
     home_passes['pass_outcome'].fillna('Success', inplace=True)
     away_passes['pass_outcome'].fillna('Success', inplace=True)
     
-    pitch = Pitch(positional=True, shade_middle=True, positional_color='#eadddd', shade_color='#f2f2f2')
-    fig, axs = pitch.draw(nrows=1, ncols=2)
+    pitch = Pitch(pitch_type='statsbomb', pitch_color='grass', line_color='white',positional=True, shade_middle=True, positional_color='#eadddd', shade_color='#f2f2f2')
+    fig, ax = pitch.draw()
     
-    pitch.kdeplot(home_passes['x'], home_passes['y'], ax=axs['pitch'][0][0],
+    pitch.kdeplot(home_passes['x'], home_passes['y'], ax=ax,
                            shade=True, levels=100, shade_lowest=True,
                            cut=7, cmap='Reds')
+    fig, ax = pitch.draw()
     
-    pitch.kdeplot(away_passes['x'], away_passes['y'], ax=axs['pitch'][0][1],
+    pitch.kdeplot(away_passes['x'], away_passes['y'], ax=ax,
                           shade=True, levels=100, shade_lowest=True,
                           cut=4, cmap='Blues')
      
