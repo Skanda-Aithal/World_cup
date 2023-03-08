@@ -1,5 +1,6 @@
-from utilites.utility_functions import Pitch_class,add_locations
+from utilites.utility_functions import add_locations
 from utilites.data_loading import choosed_match_dataframe
+from mplsoccer import Pitch
 
 def hm_main(home_team, away_team,event_type):
     
@@ -14,14 +15,14 @@ def hm_main(home_team, away_team,event_type):
     home_passes['pass_outcome'].fillna('Success', inplace=True)
     away_passes['pass_outcome'].fillna('Success', inplace=True)
     
-    pitch = Pitch_class()
-    pitch, fig, axs = pitch.create_pitch(1,2)
+    pitch = Pitch()
+    fig, axs = pitch.grid(ncols=2, axis=False, endnote_height=0.05)
     
-    pitch.kdeplot(home_passes['x'], home_passes['y'], ax=axs['pitch'][0][0],
+    pitch.kdeplot(home_passes['x'], home_passes['y'], ax=axs['pitch'][0],
                            shade=True, levels=100, shade_lowest=True,
                            cut=7, cmap='Reds')
     
-    pitch.kdeplot(away_passes['x'], away_passes['y'], ax=axs['pitch'][0][1],
+    pitch.kdeplot(away_passes['x'], away_passes['y'], ax=axs['pitch'][1],
                           shade=True, levels=100, shade_lowest=True,
                           cut=4, cmap='Blues')
      
