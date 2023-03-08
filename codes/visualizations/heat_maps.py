@@ -15,7 +15,7 @@ def hm_main(home_team, away_team,event_type):
     home_passes['pass_outcome'].fillna('Success', inplace=True)
     away_passes['pass_outcome'].fillna('Success', inplace=True)
     
-    pitch = Pitch()
+    pitch = Pitch(positional=True, shade_middle=True, positional_color='#eadddd', shade_color='#f2f2f2')
     fig, axs = pitch.grid(ncols=2, axis=False, endnote_height=0.05)
     
     pitch.kdeplot(home_passes['x'], home_passes['y'], ax=axs['pitch'][0],
