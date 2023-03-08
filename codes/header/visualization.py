@@ -48,7 +48,7 @@ def show_viz_menu(home_team, away_team, event_type):
     if(col2.button("Goals")):
         st.pyplot(show_goals_viz(home_team, away_team,event_type)) #Calls goals_viz.py
     if(col3.button("Heat Maps")):
-        st.title(f"{home_team}'s and {away_team}'s pass and heat maps")
+        st.title(f"{home_team}'s and {away_team}'s heat maps")
         st.pyplot(hm_main(home_team, away_team,event_type)) #Calls heat_maps.py
     if(col4.button("xG Expected Goals")):
         st.pyplot(xg_viz(home_team, away_team,event_type)) #Calls xg_viz() from compare.py
