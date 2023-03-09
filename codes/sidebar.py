@@ -1,7 +1,7 @@
 import streamlit as st
 
 import header.visualization as vz
-from utilites.data_loading import match_results
+from utilites.data_loading import match_results,DATADIR
 from utilites.groups import (
 group_a_matches,group_b_matches,group_c_matches,
 group_d_matches,group_e_matches,group_f_matches,
@@ -9,6 +9,8 @@ group_g_matches,group_h_matches)
 from prediction.prediction_report import prediction_report
 
 st.set_page_config(layout="wide")
+
+st.image(DATADIR + '/data/images/FootyInsights.png')
 
 def show_x_finals(matches, row, s, f, event_type):
     choosed_match =  st.sidebar.selectbox('Select Match', matches[row][s:f])  
