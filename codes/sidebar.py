@@ -10,7 +10,7 @@ from prediction.prediction_report import prediction_report
 
 st.set_page_config(layout="wide")
 
-st.image(DATADIR + '/data/images/Logo.png',width=150)
+st.sidebar.image(DATADIR + '/data/images/Logo.png',use_column_width=True)
 
 def show_x_finals(matches, row, s, f, event_type):
     choosed_match =  st.sidebar.selectbox('Select Match', matches[row][s:f])  
