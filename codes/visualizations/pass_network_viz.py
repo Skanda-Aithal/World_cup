@@ -4,16 +4,13 @@ from utilites.utility_functions import Pitch_class, add_locations
 from utilites.data_loading import choosed_match_dataframe
 
 def pass_network(passes, event):
-    #Plotting pass network visualization
     
-    #sperate locations from [x,y] to x column y column
     passes = add_locations(passes)
     
-    #Unsuccessfull passes have unsuccessfull info. But success passes don't. So, fill nan values.
+    #Unsuccessfull passes ]
     passes['pass_outcome'].fillna('Success', inplace=True)
     passes_success = passes[passes['pass_outcome'] == 'Success']
     
-    #We create pass network until first substitution.
     subs = event[event['type'] == 'Substitution']
     subs = subs['minute']
     first_sub = subs.min()

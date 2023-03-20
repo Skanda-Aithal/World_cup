@@ -18,8 +18,6 @@ def show_header(home_team, away_team, choosed_match,event_type):     #Shows team
     df, shots = all_shots(home_team,away_team,event_type)
     home_goals, away_goals, home_penalties, away_penalties = all_goals(home_team,away_team,df, shots)
     
-    #Creates columns for show match info
-    #Home team logo + Score + Away team logo
     col1,col2,col3,col4,col5 = st.columns([1,2,2,2,1])
     col1.image(home_img)
     col2.title(match_results['home_team'][choosed_match])
@@ -44,14 +42,14 @@ def show_viz_menu(home_team, away_team, event_type):
 
     if(col1.button("Line Up")):
         st.title("Lineups")
-        st.pyplot(show_lineup_viz(home_team,away_team,event_type)) #Calls lineup_viz.py
+        st.pyplot(show_lineup_viz(home_team,away_team,event_type)) 
     if(col2.button("Goals")):
-        st.pyplot(show_goals_viz(home_team, away_team,event_type)) #Calls goals_viz.py
+        st.pyplot(show_goals_viz(home_team, away_team,event_type)) 
     if(col3.button("Heat Maps")):
         st.title(f"{home_team}'s and {away_team}'s heat maps")
-        st.pyplot(hm_main(home_team, away_team,event_type)) #Calls heat_maps.py
+        st.pyplot(hm_main(home_team, away_team,event_type)) 
     if(col4.button("xG Expected Goals")):
-        st.pyplot(xg_viz(home_team, away_team,event_type)) #Calls xg_viz() from compare.py
+        st.pyplot(xg_viz(home_team, away_team,event_type)) 
     if(col5.button("Shots Map by xG")):
         col1, col2 = st.columns(2)
         col1.title(f'{home_team} Shots - xG')

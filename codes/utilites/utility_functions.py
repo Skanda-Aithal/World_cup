@@ -25,6 +25,5 @@ def add_locations(df):
     df['y'] = y
     return df
 
-#changes array elements by their cumuluative sum
 def nums_cumulative_sum(nums_list):
     return [sum(nums_list[ :i+1]) for i in range(len(nums_list))]

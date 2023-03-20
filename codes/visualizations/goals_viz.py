@@ -20,7 +20,6 @@ def show_goals_viz(home_team,away_team,event_type):
     elif len(goals) == 1:
         pitch, fig, ax = pitch.create_pitch()
 
-    #Goal count for show current score
     home_goal_count = 0
     away_goal_count = 0
         
@@ -53,7 +52,6 @@ def show_goals_viz(home_team,away_team,event_type):
            
             #Own goals' type are not 'Shot'
             else:
-                 #Own goals are not made by shots. So they don't have any location information.
                  team_name = goals['possession_team'][idx]
             
                  if(team_name == home_team):
@@ -94,7 +92,6 @@ def show_goals_viz(home_team,away_team,event_type):
         
         #Own goals' type are not 'Shot'
         else:
-             #Own goals are not made by shots. So they don't have any location information.
              team_name = goals['possession_team'][idx]
         
              if(team_name == home_team):
